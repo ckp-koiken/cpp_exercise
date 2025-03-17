@@ -2,12 +2,15 @@
 using namespace std;
 
 int main(void) {
-  bool a = 10;
-  bool b = 0; 
-  cout << a << endl;
-  cout << b << endl;
+  int x = 5;
+  cout << x << endl;
 
-  if (100) {
-    cout << "hello" << endl;
+  if (x == 5) {
+    cout << x << endl;
+
+    string x = "hello";
+    cout << x << endl;
   }
+
+  cout << x << endl;
 }
