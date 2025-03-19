@@ -2,21 +2,21 @@
 using namespace std;
 
 int main() {
-  int p, price, N;
-  string text;
-  cin >> p;
+    int p, price, N;
+    string text;
+    cin >> p;
 
-  // パターン1
-  if (p == 1) {
-    cin >> price >> N;
-  }
+    // パターン1
+    if (p == 1) {
+        cin >> price >> N;
+    }
 
-  // パターン2
-  if (p == 2) {
-    cin >> text >> price >> N;
-    cout << text << "!" << endl;
-  }
+    // パターン2
+    if (p == 2) {
+        cin >> text >> price >> N;
+        cout << text << "!" << endl;
+    }
 
-  cout << price * N << endl;
+    cout << price * N << endl;
 }
 

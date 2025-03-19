@@ -2,8 +2,8 @@
 using namespace std;
 
 int main() {
-  double R, G;
-  cin >> R >> G;
-  cout << G*2 - R << endl;
+    double R, G;
+    cin >> R >> G;
+    cout << G*2 - R << endl;
 }
 

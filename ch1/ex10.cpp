@@ -2,19 +2,19 @@
 using namespace std;
 
 int main() {
-  int A, B;
-  cin >> A >> B;
+    int A, B;
+    cin >> A >> B;
 
-  cout << "A:";
-  while (A > 0) {
-    cout << "]";
-    A--;
-  }
-  cout << endl;
-  cout << "B:";
-  while (B > 0) {
-    cout << "]";
-    B--;
-  }
-  cout << endl;
+    cout << "A:";
+    while (A > 0) {
+        cout << "]";
+        A--;
+    }
+    cout << endl;
+    cout << "B:";
+    while (B > 0) {
+        cout << "]";
+        B--;
+    }
+    cout << endl;
 }
