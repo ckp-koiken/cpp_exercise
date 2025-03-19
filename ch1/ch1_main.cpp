@@ -2,10 +2,10 @@
 using namespace std;
 
 int main(void) {
+    string s, t;
+    getline(cin, s);
+    getline(cin, t);
 
-    for (int i = 0; i < 2; i++) {
-        for (int j = 0; j < 2; j++) {
-            cout << "i: " << i << ", j: " << j << endl;
-        }
-    }
+    cout << "一行目 " << s << endl;
+    cout << "二行目 " << t << endl;
 }
