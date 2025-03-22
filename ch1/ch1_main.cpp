@@ -1,12 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main(void) {
-    vector<int> vec = {2, 5, 2, 1};
-    sort(vec.begin(), vec.end());
-    reverse(vec.begin(), vec.end());
-
-    for (int i = 0; i < vec.size(); i++) {
-        cout << vec.at(i) << endl;
+int sum(int n) {
+    if (n == 0) {
+        return 0;
     }
+    return n + sum(n-1);
 }
+
+int main(void) {
+    cout << sum(3) << endl;
+}
+
