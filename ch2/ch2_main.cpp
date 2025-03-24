@@ -1,18 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
+void func() {
+    int sum = 0;
+    bool finished = false;
+
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            sum += i * j;
+
+            if (sum > 1000) {
+                cout << i << ", " << j << endl;
+                cout << sum << endl;
+                return;
+            }
+        }
+    }
+}
 
 int main() {
-    int N; 
-    cin >> N;
-
-    int count = 0;
-    while (N > 0) {
-        if (N % 2 > 0) {
-            break;
-        }
-
-        N = N / 2;
-        count++;
-    }
-    cout << count << endl;
+    func();
 }
