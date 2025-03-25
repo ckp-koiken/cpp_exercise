@@ -1,22 +1,31 @@
 #include <bits/stdc++.h>
 using namespace std;
-void func() {
-    int sum = 0;
-    bool finished = false;
 
-    for (int i = 0; i < 10; i++) {
-        for (int j = 0; j < 10; j++) {
-            sum += i * j;
+int main() {
+    int N;
+    cin >> N;
 
-            if (sum > 1000) {
-                cout << i << ", " << j << endl;
-                cout << sum << endl;
-                return;
+    vector<vector<vector<char>>> data(N, vector<vector<char>>(3, vector<char>(3)));
+
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            for (int k = 0; k < N; k++) {
+                cin >> data.at(i).at(j).at(k);
             }
         }
     }
-}
 
-int main() {
-    func();
+    int count = 0;
+
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            for (int k = 0; k < N; k++) {
+                if (data.at(i).at(j).at(k) == 'o') {
+                    count++;
+                }
+            }
+        }
+    }
+
+    cout << count << endl;
 }
