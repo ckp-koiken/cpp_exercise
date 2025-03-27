@@ -1,18 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int sum100(vector<int> &a) {
-    int result = 0;
-    for (int i = 0; i < 100; i++) {
-        result += a.at(i);
+int sum(int n) 
+    if (n == 0) {
+        return 0;
     }
-    return result;
+    int s = sum(n - 1);
+    return s + n;
 }
 
 int main() {
-    vector<int> vec(10000000, 1);
-
-    for (int i = 0; i < 500; i++) {
-        cout << sum100(vec) << endl;
-    }
+    cout << sum(2) << endl;
+    cout << sum(3) << endl;
+    cout << sum(10) << endl;
 }
