@@ -3,7 +3,7 @@ using namespace std;
 
 int complete_time(vector<vector<int>> &children, int x) {
     // ベースケース
-    if (x == children.at(x).size()) {
+    if (children.at(x).size() == 0) {
         return 0;
     }
 
