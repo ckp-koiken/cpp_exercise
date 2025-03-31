@@ -1,16 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int sum(int n) {
-    if (n == 0) {
-        return 0;
+int main() {
+    int N;
+    cin >> N;
+    vector<int> A(N);
+
+    // O(N)
+    for (int i = 0; i < N; i++) {
+        cin >> A.at(i);
     }
-    int s = sum(n - 1);
-    return s + n;
+
+    // O(N log N)
+    sort(A.begin(), A.end());
+
+
+    // O(N)
+    for (int i = 0; i < N; i++) {
+        cout << A.at(i) << endl;
+    }
 }
 
-int main() {
-    cout << sum(2) << endl;
-    cout << sum(3) << endl;
-    cout << sum(10) << endl;
-}
