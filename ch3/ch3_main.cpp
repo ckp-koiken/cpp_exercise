@@ -3,10 +3,12 @@ using namespace std;
 
 
 int main() {
-    vector<int> data(0);
-    cout << data.size() - 1 << endl;
+    // using pii = pair<int, int>;
+    typedef pair<int, int> pii;
 
-    for (int i = 0; i < (int)data.size() - 1; i++) {
-        cout << i << endl;
-    }
+    pii p;
+    p = make_pair(1, 2);
+    cout << "(" << p. first << ", " << p.second << ")" << endl;
+    p = pii(3, 4);
+    cout << "(" << p. first << ", " << p.second << ")" << endl;
 }
