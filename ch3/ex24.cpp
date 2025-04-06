@@ -43,13 +43,37 @@ struct Clock {
     return ret;
   }
 
-  // void shift(int diff_second) {
-  //   if (diff_second < 0) {
-  //     second -= diff_second;
-  //   } else {
-  //     second += diff_second;
-  //   }
-  // }
+  void shift(int diff_second) {
+    int diff_hour = diff_second / 3600;
+    diff_second %= 3600;
+    int diff_minute = diff_second / 60;
+    diff_second %= 60;
+
+    second += diff_second;
+    if (second >= 60) {
+      minute += 1;
+      second -= 60;
+    } else if (second < 0) {
+      minute -= 1;
+      second += 60;
+    }
+
+    minute += diff_minute;
+    if (minute >= 60) {
+      hour += 1;
+      minute -= 60;
+    } else if (minute < 0) {
+      hour -= 1;
+      minute += 60;
+    }
+
+    hour += diff_hour;
+    if (hour >= 24) {
+      hour -= 24;
+    } else if (hour < 0) {
+      hour += 24;
+    }
+  }
 
 };
 
@@ -66,8 +90,8 @@ int main() {
 
   cout << clock.to_str() << endl;
 
-  // clock.shift(diff_second);
+  clock.shift(diff_second);
 
-  // cout << clock.to_str() << endl;
+  cout << clock.to_str() << endl;
 
 }
