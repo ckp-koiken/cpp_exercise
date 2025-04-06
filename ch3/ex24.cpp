@@ -15,6 +15,12 @@ struct Clock {
   string to_str(void) {
     string ret;
 
+    if (!(0 <= hour && hour <= 23 && 
+          0 <= minute && minute <= 59 && 
+          0 <= second && second <= 59)) {
+      return "error";
+    }
+
     if (hour < 10) {
       ret += "0";
     }
