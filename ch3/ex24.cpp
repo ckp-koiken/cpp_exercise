@@ -16,7 +16,7 @@ struct Clock {
     string ret;
 
     if (hour < 10) {
-      ret += 10;
+      ret += "0";
     }
     ret += to_string(hour);
 
