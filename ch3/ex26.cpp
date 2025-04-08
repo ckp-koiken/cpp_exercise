@@ -12,7 +12,9 @@ void print_vec(vector<int> vec) {
 
 // 変数名を読み取りイコールを読み飛ばす
 string read_name() {
-
+  string name, equal;
+  cin >> name >> equal;
+  return name;
 }
 
 // int式の項を1つ読み取る
