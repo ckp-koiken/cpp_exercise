@@ -24,8 +24,8 @@ int read_int(map<string, int> &var_int) {
   cin >> val;
 
   return isdigit(val.at(0))
-    ? stoi(val)
-    : var_int.at(val);
+    ? stoi(val) // 数値の場合
+    : var_int.at(val);  // 変数の場合
 }
 
 // int式全体を読み取って計算する
