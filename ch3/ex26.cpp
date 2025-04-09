@@ -20,7 +20,12 @@ string read_name() {
 // int式の項を1つ読み取る
 // 数字ならその値を返し、そうでないなら変数として解釈し変数の値を返す
 int read_int(map<string, int> &var_int) {
+  string val;
+  cin >> val;
 
+  return isdigit(val.at(0))
+    ? stoi(val)
+    : var_int.at(val);
 }
 
 // int式全体を読み取って計算する
