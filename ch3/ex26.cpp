@@ -30,7 +30,32 @@ int read_int(map<string, int> &var_int) {
 
 // int式全体を読み取って計算する
 int calc_int(map<string, int> &var_int) {
+  string symbol = ""; // 演算子を受け取る変数
+  int result = 0;
 
+  // 式の終わりである";"が出てくるまで読み続ける
+  while (symbol != ";") {
+    int val = read_int(var_int);
+
+    // 記号が入力されていない場合
+    if (symbol == "") {
+      result = val;
+    }
+
+    // 足し算の場合
+    if (symbol == "+") {
+      result += val;
+    }
+
+    // 引き算の場合
+    if (symbol == "-") {
+      result -= val;
+    }
+
+    cin >> symbol;
+  }
+
+  return result;
 }
 
 // vec値を読み取る
