@@ -61,13 +61,16 @@ int calc_int(map<string, int> &var_int) {
 // vec値を読み取る
 // 最初の"["は読み取ってある前提
 vector<int> read_vec_val(map<string, int> &var_int) {
-  vector <int> result;
-  string symbol = "";
+  vector <int> result;  // 結果を保持
+  string symbol = ""; // vec値中の記号を受け取る
 
+  // vec値の終わりである"]"が出てくるまで読む
   while (symbol != "]") {
+    // 数値を1つ読み取ってvecに追加
     int val = read_int(var_int);
     result.push_back(val);
 
+    // symbolには","か"]"が入力される
     cin >> symbol;
   }
 
