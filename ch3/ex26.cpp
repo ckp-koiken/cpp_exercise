@@ -91,27 +91,34 @@ vector<int> read_vec(map<string, int> &var_int, map<string, vector<int>> &var_ve
 
 // vec式全体を読み取って計算する
 vector<int> calc_vec(map<string, int> &var_int, map<string, vector<int>> &var_vec){
-  string symbol;
-  vector<int> result;
+  string symbol;  // 演算子を受け取る
+  vector<int> result; // 結果を保持
 
+  // 式の終わりである";"が出てくるまで読む
   while (symbol != ";") {
+    // 項を一つ読む
     vector<int> vec = read_vec(var_int, var_vec);
 
+    // 記号がなにも入力されなければそのまま結果に代入
     if (symbol == "") {
       result = vec;
     }
 
+    // 足し算の場合
     if (symbol == "+") {
       for (int i = 0; i < result.size(); i++) {
         result.at(i) += vec.at(i);
       }
     }
 
+    // 引き算の場合
     if (symbol == "-") {
       for (int i = 0; i < result.size(); i++) {
         result.at(i) -= vec.at(i);
       }
     }
+
+    // symbolには"+"、"-"、";"のいずれかが入力される
     cin >> symbol;
 
   }
