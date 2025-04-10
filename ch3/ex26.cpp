@@ -77,10 +77,15 @@ vector<int> read_vec_val(map<string, int> &var_int) {
   return result;
 }
 
-// vecの項を1つ湯尾見とる
+// vecの項を1つ読みとる
 // vec値ならその値を返し、そうでないなら変数として解釈し変数の値を返す
 vector<int> read_vec(map<string, int> &var_int, map<string, vector<int>> &var_vec) {
+  string val;
+  cin >> val;
 
+  return val == "["
+    ? read_vec_val(var_int)
+    : var_vec.at(val);
 }
 
 // vec式全体を読み取って計算する
