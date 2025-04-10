@@ -61,7 +61,17 @@ int calc_int(map<string, int> &var_int) {
 // vec値を読み取る
 // 最初の"["は読み取ってある前提
 vector<int> read_vec_val(map<string, int> &var_int) {
+  vector <int> result;
+  string symbol = "";
 
+  while (symbol != "]") {
+    int val = read_int(var_int);
+    result.push_back(val);
+
+    cin >> symbol;
+  }
+
+  return result;
 }
 
 // vecの項を1つ湯尾見とる
