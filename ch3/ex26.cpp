@@ -91,7 +91,31 @@ vector<int> read_vec(map<string, int> &var_int, map<string, vector<int>> &var_ve
 
 // vec式全体を読み取って計算する
 vector<int> calc_vec(map<string, int> &var_int, map<string, vector<int>> &var_vec){
+  string symbol;
+  vector<int> result;
 
+  while (symbol != ";") {
+    vector<int> vec = read_vec(var_int, var_vec);
+
+    if (symbol == "") {
+      result = vec;
+    }
+
+    if (symbol == "+") {
+      for (int i = 0; i < result.size(); i++) {
+        result.at(i) += vec.at(i);
+      }
+    }
+
+    if (symbol == "-") {
+      for (int i = 0; i < result.size(); i++) {
+        result.at(i) -= vec.at(i);
+      }
+    }
+    cin >> symbol;
+
+  }
+  return result;
 }
 
 int main() {
