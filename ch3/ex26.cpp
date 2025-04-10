@@ -83,9 +83,10 @@ vector<int> read_vec(map<string, int> &var_int, map<string, vector<int>> &var_ve
   string val;
   cin >> val;
 
+  // "["かどうかでvec値か変数かを判定
   return val == "["
-    ? read_vec_val(var_int)
-    : var_vec.at(val);
+    ? read_vec_val(var_int) // vec値の場合
+    : var_vec.at(val); // 変数の場合
 }
 
 // vec式全体を読み取って計算する
